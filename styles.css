@@ -15,9 +15,8 @@ header{
     top: 0;
     left: 0;
     z-index: 1000;
-    justify-content: center;
     align-items: center;
-  
+    justify-content: center;
 }
 
 header div{
@@ -30,13 +29,12 @@ header div{
 nav{
     display: flex;
     align-items: center;
-   justify-content: flex-end;
+    gap: 24px;
    }
 
 nav ul
 {
     display: flex;
-    justify-content: flex-end;
     list-style: none;
     
     
@@ -55,23 +53,43 @@ li{
 li a{
      text-decoration: none;
      color: white;
-      
+    font-weight: 500;
+    padding-bottom: 6px;
+    position: relative;
+}
+li a::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0c1730;
+    transition: width 0.3s ease;
+}
+li a:hover::after,
+li a.active::after{
+    width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.3s ease;
+  z-index: 1000;
 }
 
 
 
-
 /* Contenedor principal */
-.hero {
-margin-top: 38px; /* Para evitar que el header lo tape */
+.hero { /* Para evitar que el header lo tape */
   position: relative;
   height: 100vh;
-  background-image: url("img/Gassss.jpg");
+  background-image: url("img/gasss.jpg");
   background-size: cover;
   background-position: center;
-  
- 
-
 }
 
 /* Capa oscura */
@@ -109,7 +127,7 @@ margin-top: 38px; /* Para evitar que el header lo tape */
   display: none;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   z-index: 1000;
 }
 
@@ -314,6 +332,7 @@ button {
         font-size: 12px;
         color: #667eea;
     }
+
 
 
 
