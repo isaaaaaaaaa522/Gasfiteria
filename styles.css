@@ -1,75 +1,86 @@
+/*Gooblas CSS*/ 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif,Arial;
 }
 
-header{
-    display: flex;
-    position: fixed;
-    width: 100%;
-    background-color: #1E3A8A;
-    
-    padding: 10px 10px;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
+:root {
+  --bg-main: #0B1220;
+  --bg-section: #0F172A;
+  --bg-card: #1C2333;
+
+  --primary: #0EA5E9;      /* Azul petróleo */
+  --primary-soft: #7DD3FC;
+
+  --accent: #F97316;       /* Naranja técnico */
+
+  --text-main: #FFFFFF;
+  --text-muted: #94A3B8;
+
+  --border: #334155;
 }
 
-header div{
-    display: flex;
-    align-items: center ;
-    width: 50px;
-    margin-right: 30px;
+
+/*header estilos*/
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background-color: var(--primary);
+  padding: 18px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    gap: 24px;
-   }
 
-nav ul
-{
-    display: flex;
-    list-style: none;
-    
-    
+header div {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  margin-right: 30px;
 }
 
-li{
-    margin: 0 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-
-   
+nav ul {
+  display: flex;
+  list-style: none;
 }
 
-li a{
-     text-decoration: none;
-     color: white;
-    font-weight: 500;
-    padding-bottom: 6px;
-    position: relative;
+li {
+  margin: 0 20px;
 }
-li a::after{
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #0c1730;
-    transition: width 0.3s ease;
+
+li a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  padding-bottom: 6px;
+  position: relative;
+  transition: transform 0.3s ease, color 0.5s ease;
 }
+li a:hover,
+li a.active {
+  color: var(--accent);
+  font-size: 16.5px;
+}
+li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
 li a:hover::after,
-li a.active::after{
-    width: 100%;
+li a.active::after {
+  width: 100%;
 }
 
 .navbar {
@@ -81,11 +92,10 @@ li a.active::after{
   z-index: 1000;
 }
 
-
-
-/* Contenedor principal */
-.hero { /* Para evitar que el header lo tape */
+/*Contenedor de imagen principal*/
+.hero { 
   position: relative;
+  margin-top: 32px;
   height: 100vh;
   background-image: url("img/gasss.jpg");
   background-size: cover;
@@ -96,7 +106,7 @@ li a.active::after{
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
 /* Texto encima de todo */
@@ -106,35 +116,35 @@ li a.active::after{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--text-main);
   font-size: 4rem;
   z-index: 1;
 }
 
+/* Boton para subir arriba*/
 #backToTop { 
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 45px;
-  height: 45px;
+  bottom: 100px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
   border: none;
   border-radius: 50%;
-  background: linear-gradient(135deg, #080808, #000000);
-  color: red;
-  font-size: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background: var(--bg-card);
+  color: var(--accent);
+  font-size: 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   display: none;
   align-items: center;
   justify-content: center;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   z-index: 1000;
 }
 
-
-
+/* Seccion de los servicios de pagina*/
 .services {
-  background-color: blue;
+  background-color: var(--bg-section);
   padding: 60px 80px;
 }
 
@@ -149,7 +159,7 @@ li a.active::after{
 /* Cada card ocupa 50% */
 .card {
   display: flex;
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 16px;
   overflow: hidden;
   flex: 1 1 calc(50% - 12px);
@@ -173,36 +183,31 @@ li a.active::after{
 .card-content h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: var(--text-main);
 }
 
 .card-content p {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-muted);
   margin-bottom: 12px;
 }
 
 .card-content a {
-  color: #2563eb;
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
+/* Seccion de Contacto de la pagina*/
 .contacto {
-  background: #b91c1c; /* rojo */
+  background: var(--bg-section);
   padding: 60px 40px;
 }
 
 .contacto h2 {
   text-align: center;
-  color: #fff;
-    font-size: 2rem;
+  color: var(--text-main);
+  font-size: 2rem;
   margin-bottom: 40px;
 }
 
@@ -217,53 +222,44 @@ li a.active::after{
 /* IZQUIERDA */
 .info {
   flex: 1;
-  color: #fff;
+  color: var(--text-main);
 }
-
-
 
 .descripcion {
   font-size: 0.95rem;
   margin-bottom: 20px;
+  color: var(--text-muted);
 }
 
 .box {
-  background: #fff;
-  color: #111;
+  background: var(--bg-card);
+  color: var(--text-main);
   padding: 16px;
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
-.mapa {
-  height: 200px;
-  background: #eee;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
-}
-
 /* DERECHA */
 .formulario {
   flex: 1;
-  background: #fff;
+  background: var(--bg-card);
   padding: 30px;
   border-radius: 16px;
+  color: var(--text-main);
 }
 
 .formulario h3 {
   margin-bottom: 20px;
 }
 
-
-
+/*Forumario de la parte de contacto*/
 input, select, textarea {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-main);
 }
 
 textarea {
@@ -277,63 +273,79 @@ textarea {
   font-size: 0.85rem;
   display: block;
   margin-bottom: 15px;
+  color: var(--text-muted);
 }
 
 .check a {
-  color: #2563eb;
+  color: var(--primary-soft);
   text-decoration: none;
 }
 
 button {
-  background: #2563eb;
-  color: #fff;
+  background: var(--accent);
+  color: #000;
   border: none;
   padding: 12px 20px;
   border-radius: 8px;
   cursor: pointer;
 }
 
+/* Inputs flotantes */
 .input-group {
-        position: relative;
-        margin-bottom: 20px;
-    }
+  position: relative;
+  margin-bottom: 20px;
+}
 
-    .input-group input {
-        width: 100%;
-        padding: 12px 15px;
-        font-size: 16px;
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        outline: none;
-        background: transparent;
-        transition: border-color 0.3s;
-    }
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  background: transparent;
+  color: var(--text-main);
+  transition: border-color 0.3s;
+}
 
-    .input-group input:focus {
-        border-color: #667eea;
-    }
+.input-group input:focus {
+  border-color: var(--primary-soft);
+}
 
-    .input-group label {
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #999;
-        font-size: 16px;
-        pointer-events: none;
-        transition: all 0.3s ease;
-        background: white;
-        padding: 0 5px;
-    }
+.input-group label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: var(--bg-card);
+  padding: 0 5px;
+}
 
-    .input-group input:focus + label,
-    .input-group input:valid + label {
-        top: 0;
-        font-size: 12px;
-        color: #667eea;
-    }
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: 0;
+  font-size: 12px;
+  color: var(--accent);
+}
 
+/* Estilo del mapa*/
+.mapa {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
 
-
-
-
+.mapa iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
