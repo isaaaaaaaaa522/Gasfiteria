@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/png">
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
     <title>Document</title>
 </head>
 <body>
     <header class="navbar">
    <nav>
     <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#">Sobre Nosotros</a></li>
-        <li class="number"><a href="#">Contacto</a></li>
+        <li><a href="#inicio" class="active">Inicio</a></li>
+         <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>       
+        <li class="number"><a href="#contacto">Contacto</a></li>
       
        
     </ul>
@@ -25,6 +29,27 @@
   <h1>Hola</h1>
 </section>
 
+<section id="sobre-nosotros" class="emergencia">
+  <div class="contenido">
+    <h2>¿Tienes una emergencia ahora mismo?</h2>
+    <p>
+      No dejes que una fuga o un corte de luz arruine tu día.
+      Nuestro equipo de respuesta rápida está listo para salir.
+    </p>
+
+    <div class="botones">
+      <a  class="btn blanco">
+        <i class="fa-solid fa-phone"></i>
+        Llamar al 999-999-999
+      </a>
+
+      <a href="https://wa.me/51999999999" class="btn outline" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <section id="servicios" class="services">
@@ -62,7 +87,7 @@
       <div class="card-content">
         <h3>Bombas de Agua</h3>
         <p>Instalación y mantenimiento de sistemas de bombeo.</p>
-        <a href="#">Solicitar detalles →</a>
+        <a href="servicios.html" target="_blank">Solicitar detalles →</a>
       </div>
     </div>
 
@@ -71,7 +96,7 @@
 
 
 
-<section class="contacto">
+<section id="contacto" class="contacto">
     <h2>Ubícanos</h2>
   <div class="contenedor">
 
@@ -81,18 +106,28 @@
       
 
       <div class="box">
-        <strong>Dirección</strong>
-        <p>Av. Principal 123, Oficina 4B<br>Ciudad de México, CP 01234</p>
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+        <strong>Dirección: Av. Principal 123, Oficina 4B<br>Ciudad de México, CP 01234</p></strong>
+
+        </div>
+        
       </div>
 
       <div class="box">
-        <strong>Teléfono</strong>
-        <p>+52 555 123 4567<br>Lunes a Viernes, 9am - 6pm</p>
+       <i class="fa-solid fa-phone"></i>
+        <div>
+           <strong>Teléfono: +52 555 123 4567<br>Lunes a Viernes, 9am - 6pm</strong>
+
+        </div>
+       
       </div>
 
       <div class="box">
-        <strong>Email</strong>
-        <p>contacto@empresa.com</p>
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+           <strong>Email: contacto@empresa.com</strong>
+        </div>
       </div>
 
       <div class="mapa">
@@ -131,9 +166,20 @@
 </section>
 
 
-<footer>
-    <p>&copy; 2024 Gasfitería y Servicios Eléctricos. Todos los derechos reservados.</p>
+<footer class="footer">
+  <p>&copy; 2024 Gasfitería y Servicios Eléctricos. Todos los derechos reservados.</p>
+
+  <div class="redes">
+    <a href="#" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="#" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+  </div>
 </footer>
+
 
 <button id="backToTop">↑</button>
 <script
