@@ -138,7 +138,7 @@ const navLinks = document.querySelectorAll(".navbar a");
 
 });
 
-const texto = "Detalle de Servicios";
+const texto = "Servicios Técnicos";
   const elemento = document.getElementById("escribir");
 
   let i = 0;
