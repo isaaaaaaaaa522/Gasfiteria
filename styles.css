@@ -187,15 +187,11 @@ li a.active::after {
   justify-content: center;
   height: 100%;
   color: var(--text-main);
-<<<<<<< HEAD
+font-size: 4rem;
   font-size: 30rem;
   z-index: 1;
   -webkit-text-stroke: 0px white;
-
   animation: textoAnim 5.5s ease-in-out infinite;
-=======
-  font-size: 4rem;
->>>>>>> daceb78ba823ae40ddf307bf7ff2a4849fd17544
 }
 
 @keyframes textoAnim{
@@ -244,6 +240,7 @@ li a.active::after {
 
 /* Seccion de los servicios de pagina*/
 .services {
+  z-index: 100;
   background-color: var(--bg-section);
   padding: 60px 80px;
 }
