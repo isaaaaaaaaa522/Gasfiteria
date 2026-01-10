@@ -202,10 +202,36 @@ header nav{
   align-items: center;
   justify-content: center;
   color: var(--text-main);
-  font-size: 4rem;
+  font-size: 30rem;
   z-index: 1;
+  -webkit-text-stroke: 0px white;
+
+  animation: textoAnim 5.5s ease-in-out infinite;
 }
 
+@keyframes textoAnim{
+  0%{
+    color: white;
+    -webkit-text-stroke: 0px white;
+  }
+
+  50%{
+    color: transparent;         /* se vuelve contorno */
+    -webkit-text-stroke: 2px white;
+    
+  }
+
+   70%{
+    color: transparent;         /* se vuelve contorno */
+    -webkit-text-stroke: 2px white;
+    
+  }
+
+  100%{
+    color: white;
+    -webkit-text-stroke: 0px white;
+  }
+}
 /* Boton para subir arriba*/
 #backToTop { 
   position: fixed;
@@ -248,7 +274,12 @@ header nav{
   border-radius: 16px;
   overflow: hidden;
   flex: 1 1 calc(50% - 12px);
-  min-height: 200px;
+  min-height: 200px; 
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.01);
 }
 
 /* Imagen */
@@ -263,6 +294,7 @@ header nav{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 }
 
 .card-content h3 {
@@ -281,6 +313,12 @@ header nav{
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
+}
+
+.card-content i{
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 10px;
 }
 
 /* Seccion de Contacto de la pagina*/
@@ -541,7 +579,7 @@ button {
   border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .btn i {
@@ -561,19 +599,44 @@ button {
 }
 
 /* HOVER */
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
+
 /*------Servicio---------*/
 .serv-img{
-  width: 90vw;
-  height: 32vh;
+  width: 99vw;
+  height: 40vh;
+  background-image: url(img/plomero.webp);
+  animation: imgAnim 6s ease-in-out infinite;
+  object-fit: contain;
+  background-position: center;
 }
-.serv-img img{
-  width: 90%;
-  height: 100%;
+
+@keyframes imgAnim {
+  0% {
+    background-image: url("img/plomero_baño.webp");
+     object-fit: contain;
+  background-position: center;
+  }
+
+  33% {
+    background-image: url("img/plomero.webp");
+     object-fit: contain;
+  background-position: center;
+  }
+
+  66% {
+    background-image: url("img/gasss.jpg");
+     object-fit: contain;
+  background-position: center;
+  }
+
+  100% {
+    background-image: url("img/electricidad.jpg");
+ background-size: cover;
+     object-fit: contain;
+  background-position: center;
+  }
 }
+
 .serv-img h1 {
   position: absolute;
   top: 20%;
@@ -584,7 +647,7 @@ button {
 .serv-capa{
   position: absolute;
   width: 100%;
-  height: 32vh;
+  height: 40vh;
   z-index: 0;
   background-color: rgba(0, 0, 0, 0.55);
 }
@@ -656,7 +719,7 @@ nav a.active::after {
 }
 
 /*-----Contenido de Detalle de Servicio-----*/
-main .Detalle-servicio{
+.Detalle-servicio{
   color:var(--text-main);
   height: auto;
   grid-area: Content;
@@ -667,13 +730,17 @@ main .Detalle-servicio{
   border-radius: 15px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.Imagen-servicio{
+.Imagen-servicio {
   width: 100%;
+  background-image: url("img/plomero_baño.webp");
   height: 20vh;
-  background-image: url(img/plomero_baño.webp);
-  background-size: cover;
   border-radius: 15px 15px 0 0;
+  background-size: cover;
+  background-position: center;
 }
+
+
+
 .section-capa{
   width: 100%;
   height: 20vh;
@@ -794,3 +861,4 @@ main .Info-contact{
   font-size: 0.9rem;
   color: var(--text-muted);
 }
+

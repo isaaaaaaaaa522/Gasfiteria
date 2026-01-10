@@ -71,6 +71,8 @@ links.forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
 
+
+
     // 🔥 manejar activo
     links.forEach(l => l.classList.remove("active"));
     link.classList.add("active");
@@ -123,6 +125,9 @@ const navLinks = document.querySelectorAll(".navbar a");
       link.classList.add("active");
     });
   });
+
+
+
   const boton = document.querySelector(".menu-movil .btn-menu");
   const menuMovil = document.querySelector(".menu-movil");
 
@@ -131,3 +136,19 @@ const navLinks = document.querySelectorAll(".navbar a");
     });
 
 });
+
+const texto = "Detalle de Servicios";
+  const elemento = document.getElementById("escribir");
+
+  let i = 0;
+  elemento.textContent = ""; // limpia el texto
+
+  function escribirTexto() {
+    if (i < texto.length) {
+      elemento.textContent += texto.charAt(i);
+      i++;
+      setTimeout(escribirTexto, 100); // velocidad
+    }
+  }
+
+  escribirTexto();
