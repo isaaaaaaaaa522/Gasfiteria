@@ -135,7 +135,7 @@ const navLinks = document.querySelectorAll(".navbar a");
         menuMovil.classList.toggle("open");
     });
 
-<<<<<<< HEAD
+
 });
 
 const texto = "Detalle de Servicios";
@@ -153,9 +153,9 @@ const texto = "Detalle de Servicios";
   }
 
   escribirTexto();
-=======
+
   
-});
+
 const menuToggle = document.getElementById("menuToggle");
 const navsLinks = document.getElementById("navsLinks");
 const navLinksItems = navsLinks.querySelectorAll("a");
@@ -170,4 +170,4 @@ navLinksItems.forEach(link => {
     navsLinks.classList.remove("active");
   });
 });
->>>>>>> daceb78ba823ae40ddf307bf7ff2a4849fd17544
+
