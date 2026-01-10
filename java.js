@@ -130,4 +130,19 @@ const navLinks = document.querySelectorAll(".navbar a");
         menuMovil.classList.toggle("open");
     });
 
+  
+});
+const menuToggle = document.getElementById("menuToggle");
+const navsLinks = document.getElementById("navsLinks");
+const navLinksItems = navsLinks.querySelectorAll("a");
+
+menuToggle.addEventListener("click", () => {
+  navsLinks.classList.toggle("active");
+});
+
+// 🔹 Cerrar menú al hacer click en un link
+navLinksItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navsLinks.classList.remove("active");
+  });
 });
