@@ -138,6 +138,30 @@ const navLinks = document.querySelectorAll(".navbar a");
 
 });
 
+  
+
+const menuToggle = document.getElementById("menuToggle");
+const navsLinks = document.getElementById("navsLinks");
+const navLinksItems = navsLinks.querySelectorAll("a");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navsLinks.classList.toggle("active");
+
+  menuToggle.classList.toggle("open", isOpen);
+  menuToggle.textContent = isOpen ? "✖" : "☰";
+});
+
+// cerrar al hacer click en un link
+navLinksItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navsLinks.classList.remove("active");
+    menuToggle.classList.remove("open");
+    menuToggle.textContent = "☰";
+  });
+});
+
+
+
 const texto = "Servicios Técnicos";
   const elemento = document.getElementById("escribir");
 
@@ -153,21 +177,3 @@ const texto = "Servicios Técnicos";
   }
 
   escribirTexto();
-
-  
-
-const menuToggle = document.getElementById("menuToggle");
-const navsLinks = document.getElementById("navsLinks");
-const navLinksItems = navsLinks.querySelectorAll("a");
-
-menuToggle.addEventListener("click", () => {
-  navsLinks.classList.toggle("active");
-});
-
-// 🔹 Cerrar menú al hacer click en un link
-navLinksItems.forEach(link => {
-  link.addEventListener("click", () => {
-    navsLinks.classList.remove("active");
-  });
-});
-
