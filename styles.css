@@ -563,7 +563,7 @@ button {
 }
 /*-----footer----*/
 .footer {
-  background: #000;
+  background: var(--accent);
   color: #fff;
   text-align: center;
   padding: 30px 20px;
@@ -586,12 +586,12 @@ button {
 .redes a {
   width: 40px;
   height: 40px;
-  background: #fff;
+  background: var(--bg-section);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: white;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
