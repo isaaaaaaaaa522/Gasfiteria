@@ -178,7 +178,6 @@ const texto = "Servicios Técnicos";
   escribirTexto();
 
 /*Lo del checkbox*/ 
-
 /*  const form = document.querySelector('.formulario');
   const checkbox = document.getElementById('politica');
   const error = document.getElementById('error-politica');
