@@ -175,5 +175,22 @@ const texto = "Servicios Técnicos";
       setTimeout(escribirTexto, 100); // velocidad
     }
   }
-
   escribirTexto();
+
+/*Lo del checkbox*/ 
+
+/*  const form = document.querySelector('.formulario');
+  const checkbox = document.getElementById('politica');
+  const error = document.getElementById('error-politica');
+
+  // oculto el mensaje al inicio
+  error.style.display = 'none';
+
+  form.addEventListener('submit', function (e) {
+    if (!checkbox.checked) {
+      e.preventDefault(); // ⛔ NO envía el formulario
+      error.style.display = 'flex'; // o 'block'
+    } else {
+      error.style.display = 'none';
+    }
+  }); */

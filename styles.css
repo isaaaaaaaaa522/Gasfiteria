@@ -814,10 +814,10 @@ nav a.active::after {
   transition: width 0.3s ease;
 }
 
-.Menu-servicios nav a.active::after,
+/* .Menu-servicios nav a.active::after,
 .Menu-servicios nav a:hover::after{
   width: 100%;
-}
+} */
 
 nav a i{
   font-size: 1.3rem;
@@ -855,10 +855,13 @@ nav a i{
 }
 .section-capa h2{
   height: 100%;
+ text-align: center;
   display: flex;
-  align-items: end;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
   padding: 15px;
-  font-size:1.5rem;
+  font-size:2.6rem;
   color: var(--text-main)
 }
 .Infor-service{
@@ -868,7 +871,8 @@ nav a i{
   width: 90%;
   margin-top: 15px;
   margin-block:15px ;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
   color: var(--text-muted);
 }
 #lista-servicios{
@@ -887,10 +891,10 @@ nav a i{
   color: var(--text-muted);
 }
 /*-----Informacion de Contacto-----*/
-main .Info-contact{
+ .Info-contact{
   color: var(--text-main);
   grid-area:article;
-  background: var(--bg-card);
+  background: var(--bg-section);
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -898,19 +902,19 @@ main .Info-contact{
   padding: 15px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
+
+ .Info-contact h2{
+  font-size: 1.5rem;
+  margin-block: 10px;
+  text-align: center;
+}
+
 @media (max-width:768px){
-  main .Info-contact{
+  .Info-contact{
     margin: 20px;
   }
 }
-.Info-contact small{
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-block:10px;
-}
-.Info-contact h3{
-  margin-block:10px;
-}
+
 .Info-contact button{
   font-size: 0.9rem;
   color: var(--text-main);
@@ -986,17 +990,21 @@ main .Info-contact{
 }
 
 .nosotros-titulo {
-  font-size: 2.3rem;
-  font-weight: 700;
+   text-align: center;
+  font-size: 3.7rem;
+  font-weight: 600;
   margin-bottom: 15px;
   color: #ffffff;
 }
 
-.nosotros-subtitulo {
-  color: #ffffff;
-  font-size: 1rem;
-  max-width: 650px;
-  margin: 0 auto 60px;
+.nosotros-titulo::after{
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: white;
+  margin: 5px auto 0;
+  border-radius: 5px;
 }
 
 .nosotros-lista {
@@ -1009,13 +1017,13 @@ main .Info-contact{
   background: var(--bg-card);
   padding: 40px 25px;
   border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 40px;
+  border-top: var(--accent) 4px solid;
 }
 
 .nosotros-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
 }
 
 .nosotros-icono {
@@ -1023,23 +1031,49 @@ main .Info-contact{
   height: 70px;
   margin: 0 auto 20px;
   background: #eaf1ff;
-  color: #2563eb;
+  color: var(--accent);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 40px;
 }
 
 .nosotros-item-titulo {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 12px;
-  color: #FFFFFF;
+  color: var(--accent);
 }
 
 .nosotros-item-texto {
   font-size: 0.95rem;
   color: #FFFFFF;
-  line-height: 1.6;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* .error {
+  color: #e53935;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+} */
+
+
+
+.faq summary {
+  background: var(--bg-section);
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq p {
+  background: var(--bg-card);
+  padding: 15px;
+  border-radius: 0 0 10px 10px;
 }
