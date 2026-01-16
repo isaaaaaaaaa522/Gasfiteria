@@ -186,7 +186,7 @@ li a.active::after {
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 1;
 }
 /* Texto encima de todo */
@@ -871,9 +871,10 @@ nav a i{
   width: 90%;
   margin-top: 15px;
   margin-block:15px ;
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   color: var(--text-muted);
+  font-family: 'Poppins', sans-serif,Arial;
 }
 #lista-servicios{
   display: grid;
@@ -889,6 +890,7 @@ nav a i{
 .separador p{
   font-size: 0.9rem;
   color: var(--text-muted);
+ 
 }
 /*-----Informacion de Contacto-----*/
  .Info-contact{
@@ -1078,5 +1080,180 @@ nav a i{
   border-radius: 0 0 10px 10px;
 }
 
+
+/*==========================================================================00*/
+
+/* ===== HERO ===== */
+.midnight-hero {
+  background: linear-gradient(120deg, #020617, #0f172a);
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+
+}
+
+.midnight-hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.midnight-hero p {
+  font-size: 15px;
+  color: #c7d2fe;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.midnight-hero small {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ===== CONTENEDOR ===== */
+.cloud-container {
+  width: 100%;
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+ 
+}
+
+/* ===== TARJETA PRINCIPAL ===== */
+.snow-card {
+  background: #ffffff;
+  width: 100%;
+  padding: 40px;
+
+  
+}
+
+/* ===== TEXTO ===== */
+.graphite-text {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 32px;
+  text-align: justify;
+}
+
+/* ===== SECCIONES ===== */
+.slate-section {
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+ 
+  
+}
+
+.slate-section h3 {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+/* ===== ICONOS ===== */
+.azure-icon {
+  background-color: var(--accent);
+  color: #ffffff;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.azure-icon i{
+  font-size: 18px;
+}
+/* ===== LISTAS ===== */
+.slate-list {
+  padding-left: 18px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.slate-list li {
+  margin-bottom: 8px;
+}
+
+/* ===== NOTA ===== */
+.cloud-note {
+  margin-top: 12px;
+  background: #f1f5f9;
+  padding: 12px;
+  font-size: 13px;
+  border-radius: 8px;
+  color: #475569;
+}
+
+/* ===== DERECHOS ARCO ===== */
+.sky-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.sky-box {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.sky-box strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+/* ===== SOPORTE ===== */
+/* .azure-support {
+  background: #eef4ff;
+  padding: 20px;
+  border-radius: 14px;
+  margin-top: 32px;
+} */
+
+.azure-support a {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* ===== RESPONSIVE ===== */
+/* @media (max-width: 600px) {
+  .midnight-hero h1 {
+    font-size: 28px;
+  }
+
+  .snow-card {
+    padding: 24px;
+  }
+} */
+
+.divisor{
+
+
+  display: flex;
+  width: 800px;
+  margin: auto;
+  transform: translateX(100px);
+ 
+  align-items: flex-start;
+  flex-direction: column;
+
+}
 
 

@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const servicios = {
     gasfiteria: {
       titulo: "Servicio de Gasfitería",
-      descripcion: "Nuestro servicio de gasfitería cubre todas las necesidades residenciales y comerciales.",
+      descripcion: "Nuestro servicio de gasfitería cubre todas las necesidades residenciales y comerciales. Nuestro servicio de gasfitería cubre todas las necesidades residenciales y comerciales.",
       items: [
         { titulo: "Reparación de fugas", detalle: "Detección y reparación rápida de fugas." },
         { titulo: "Reparación de fugas", detalle: "Detección y reparación rápida de fugas." },
