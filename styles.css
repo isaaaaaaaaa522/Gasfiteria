@@ -1070,11 +1070,11 @@ nav a i{
 .error {
   color: #e53935;
   font-size: 0.9rem;
-  margin-top: 8px;
-  display: flex;
+  margin-block: 15px;
+  display: none; /* oculto por defecto */
   align-items: center;
-  gap: 6px;
 }
+
 
 
 
