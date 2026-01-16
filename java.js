@@ -1,6 +1,21 @@
 /* ==========================
    NAVBAR
 ========================== */
+
+var lastScrollTop = 0;
+    navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function(){
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if(scrollTop > lastScrollTop){
+            navbar.style.top='-80px';
+        }
+        else{
+            navbar.style.top='0';
+        }
+        lastScrollTop = scrollTop;
+    });
+
+
 function initNavbar() {
   let lastScrollTop = 0;
   const navbar = document.querySelector('.navbar');
@@ -17,18 +32,15 @@ function initNavbar() {
 /* ==========================
    BACK TO TOP
 ========================== */
-function initBackToTop() {
-  const backToTop = document.getElementById("backToTop");
-  if (!backToTop) return;
+const backToTop = document.getElementById("backToTop");
 
-  window.addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
     backToTop.style.display = window.scrollY > 200 ? "block" : "none";
-  });
+});
 
-  backToTop.addEventListener("click", () => {
+backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+});
 
   /* ===== SERVICIOS ===== */
   const servicios = {
