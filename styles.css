@@ -681,8 +681,7 @@ background-color: var(--bg-section);
 
 /*------Servicio---------*/
 .serv-img{
-
-  width: 99vw;
+  width: 98.5vw;
   height: 40vh;
   background-image: url(img/plomero.webp);
   animation: imgAnim 6s ease-in-out infinite;
@@ -693,27 +692,30 @@ background-color: var(--bg-section);
 @keyframes imgAnim {
   0% {
     background-image: url("img/plomero_baño.webp");
+    background-size: cover;
      object-fit: contain;
-  background-position: center;
+    background-position: center;
   }
 
   33% {
     background-image: url("img/plomero.webp");
+    background-size: cover;
      object-fit: contain;
-  background-position: center;
+    background-position: center;
   }
 
   66% {
     background-image: url("img/gasss.jpg");
+    background-size: cover;
      object-fit: contain;
-  background-position: center;
+    background-position: center;
   }
 
   100% {
     background-image: url("img/electricidad.jpg");
- background-size: cover;
+    background-size: cover;
      object-fit: contain;
-  background-position: center;
+    background-position: center;
   }
 }
 
@@ -736,14 +738,20 @@ background-color: var(--bg-section);
   z-index: 0;
   background-color: rgba(0, 0, 0, 0.55);
 }
+@media (max-width:768px){
+  .serv-img{
+    width: 100%;
+    aspect-ratio: 15/4;
+  }
+}
 /*------Main Servicio---------*/
 main{
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 2fr 1fr 1.9fr;
   grid-template-areas: 
   "navegador navegador navegador"
   "Content Content article"
-  "Content Content preguntas"
+  "Content Content Garantia"
   "Content Content ."
   "Content Content . "
   "atencion atencion ."
@@ -757,7 +765,7 @@ main{
     "navegador navegador navegador"
     "Content Content Content "
     "article article article"
-    "preguntas preguntas preguntas"
+    "Garantia Garantia Garantia"
     "atencion atencion atencion"
     "footer footer footer";
   }
@@ -766,8 +774,8 @@ main{
 main .Menu-servicios{
   width: 100%;
   grid-area: navegador;
-height: 80px;
- box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  height: 80px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
 main nav{
   height: 100%;
@@ -779,6 +787,11 @@ main nav{
 @media (max-width:768px){
   main nav{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  main .Menu-servicios{
+    height: auto;
   }
 }
 main nav a{
@@ -813,7 +826,7 @@ nav a.active::after {
   background-color: var(--accent);
   transition: width 0.3s ease;
 }
-
+/*-----animacion de la nav de servicios----*/
 /* .Menu-servicios nav a.active::after,
 .Menu-servicios nav a:hover::after{
   width: 100%;
@@ -844,9 +857,6 @@ nav a i{
   background-size: cover;
   background-position: center;
 }
-
-
-
 .section-capa{
   width: 100%;
   height: 20vh;
@@ -880,6 +890,7 @@ nav a i{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .separador{
   background-color: var(--bg-card);
   margin-right: 15px;
@@ -891,6 +902,12 @@ nav a i{
   font-size: 0.9rem;
   color: var(--text-muted);
  
+}
+@media (max-width:768px){
+  #lista-servicios{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 /*-----Informacion de Contacto-----*/
  .Info-contact{
@@ -923,26 +940,9 @@ nav a i{
   margin-block:10px;
   margin-inline: 20px;
 }
-.Garantias{
-  display: flex;
-  flex-direction: column;
-  margin-top: 5px;
-}
-.Garantias span{
-  padding: 15px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  height: 100%;
-  background-color: var(--bg-main);
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-block:5px;
-  border-radius: 15px;
-}
-/*-----Preguntas Frecuentes-----*/
+/*-----Informacion de Garantia-----*/
 .Preguntas{
-  grid-area: preguntas;
+  grid-area: Garantia;
   margin: 10px;
   background-color: var(--bg-section);
   color: var(--text-main);
@@ -950,8 +950,22 @@ nav a i{
   padding: 15px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.Preguntas select{
+.Preguntas div{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  width: 100%;
   margin-block: 8px;
+  gap: 15px;
+  justify-content: center;
+}
+.Preguntas h2{
+  text-align: center;
+}
+.Preguntas span{
+  padding: 15px;
+  background-color: var(--bg-card);
+  border-radius: 15px;
 }
 /*------- Atencion ------*/
 .Proceso-atencion{
@@ -1058,11 +1072,11 @@ nav a i{
 .error {
   color: #e53935;
   font-size: 0.9rem;
-  margin-top: 8px;
-  display: flex;
+  margin-block: 15px;
+  display: none; /* oculto por defecto */
   align-items: center;
-  gap: 6px;
 }
+
 
 
 

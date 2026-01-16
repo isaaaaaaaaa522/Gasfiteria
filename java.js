@@ -1,30 +1,34 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* ===== NAVBAR SCROLL ===== */
+/* ==========================
+   NAVBAR
+========================== */
+function initNavbar() {
   let lastScrollTop = 0;
   const navbar = document.querySelector('.navbar');
 
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (!navbar) return;
 
-      navbar.style.top = scrollTop > lastScrollTop ? '-80px' : '0';
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-  }
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    navbar.style.top = scrollTop > lastScrollTop ? '-80px' : '0';
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+}
 
-  /* ===== BOTÓN BACK TO TOP ===== */
+/* ==========================
+   BACK TO TOP
+========================== */
+function initBackToTop() {
   const backToTop = document.getElementById("backToTop");
+  if (!backToTop) return;
 
-  if (backToTop) {
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
-    });
+  window.addEventListener("scroll", () => {
+    backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+  });
 
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
   /* ===== SERVICIOS ===== */
   const servicios = {
@@ -62,51 +66,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-const links = document.querySelectorAll(".Menu-servicios nav a");
-const titulo = document.getElementById("titulo-servicio");
-const descripcion = document.getElementById("descripcion-servicio");
-const lista = document.getElementById("lista-servicios");
+  const links = document.querySelectorAll(".Menu-servicios nav a");
+  const titulo = document.getElementById("titulo-servicio");
+  const descripcion = document.getElementById("descripcion-servicio");
+  const lista = document.getElementById("lista-servicios");
 
-links.forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
+  if (!links.length) return;
 
+  links.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
 
+      links.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
 
-    // 🔥 manejar activo
-    links.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
+      const servicio = servicios[link.dataset.service];
+      if (!servicio) return;
 
-    const key = link.dataset.service;
-    const servicio = servicios[key];
-    if (!servicio) return;
+      titulo.textContent = servicio.titulo;
+      descripcion.textContent = servicio.descripcion;
+      lista.innerHTML = "";
 
-    titulo.textContent = servicio.titulo;
-    descripcion.textContent = servicio.descripcion;
-
-    lista.innerHTML = "";
-    servicio.items.forEach(item => {
-      lista.innerHTML += `
-        <section>
-          <div class="separador">
-            <h4>${item.titulo}</h4>
-            <p>${item.detalle}</p>
-          </div>
-        </section>
-      `;
+      servicio.items.forEach(item => {
+        lista.innerHTML += `
+          <section>
+            <div class="separador">
+              <h4>${item.titulo}</h4>
+              <p>${item.detalle}</p>
+            </div>
+          </section>
+        `;
+      });
     });
   });
-});
 
-// Activo inicial
-if (links.length > 0) {
-  links[0].classList.add("active");
   links[0].click();
-}
 
-  
-const navLinks = document.querySelectorAll(".navbar a");
 
+/* ==========================
+   NAV LINKS ACTIVO
+========================== */
+function initNavLinks() {
+  const navLinks = document.querySelectorAll(".navbar a");
   const activeLink = localStorage.getItem("activeNav");
 
   if (activeLink) {
@@ -120,77 +121,88 @@ const navLinks = document.querySelectorAll(".navbar a");
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       localStorage.setItem("activeNav", link.getAttribute("href"));
-
       navLinks.forEach(l => l.classList.remove("active"));
       link.classList.add("active");
     });
   });
+}
 
+/* ==========================
+   MENÚ MÓVIL
+========================== */
+function initMenuMovil() {
+  const menuToggle = document.getElementById("menuToggle");
+  const navsLinks = document.getElementById("navsLinks");
+  if (!menuToggle || !navsLinks) return;
 
+  const navLinksItems = navsLinks.querySelectorAll("a");
 
-  const boton = document.querySelector(".menu-movil .btn-menu");
-  const menuMovil = document.querySelector(".menu-movil");
-
-    boton.addEventListener("click", () => {
-        menuMovil.classList.toggle("open");
-    });
-
-
-});
-
-  
-
-const menuToggle = document.getElementById("menuToggle");
-const navsLinks = document.getElementById("navsLinks");
-const navLinksItems = navsLinks.querySelectorAll("a");
-
-menuToggle.addEventListener("click", () => {
-  const isOpen = navsLinks.classList.toggle("active");
-
-  menuToggle.classList.toggle("open", isOpen);
-  menuToggle.textContent = isOpen ? "✖" : "☰";
-});
-
-// cerrar al hacer click en un link
-navLinksItems.forEach(link => {
-  link.addEventListener("click", () => {
-    navsLinks.classList.remove("active");
-    menuToggle.classList.remove("open");
-    menuToggle.textContent = "☰";
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navsLinks.classList.toggle("active");
+    menuToggle.classList.toggle("open", isOpen);
+    menuToggle.textContent = isOpen ? "✖" : "☰";
   });
-});
 
+  navLinksItems.forEach(link => {
+    link.addEventListener("click", () => {
+      navsLinks.classList.remove("active");
+      menuToggle.textContent = "☰";
+    });
+  });
+}
 
+/* ==========================
+   FORMULARIO
+========================== */
+function initFormulario() {
+  const form = document.querySelector(".formulario");
+  const checkbox = document.getElementById("politica");
+  const errorPolitica = document.getElementById("error-politica");
 
-const texto = "Servicios Técnicos";
+  if (!form || !checkbox || !errorPolitica) return;
+
+  form.addEventListener("submit", e => {
+    if (!checkbox.checked) {
+      e.preventDefault();
+      errorPolitica.style.display = "flex";
+    }
+  });
+
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      errorPolitica.style.display = "none";
+    }
+  });
+}
+
+/* ==========================
+   TEXTO ANIMADO
+========================== */
+function initTextoAnimado() {
+  const texto = "Servicios Técnicos";
   const elemento = document.getElementById("escribir");
+  if (!elemento) return;
 
   let i = 0;
-  elemento.textContent = ""; // limpia el texto
+  elemento.textContent = "";
 
   function escribirTexto() {
     if (i < texto.length) {
       elemento.textContent += texto.charAt(i);
       i++;
-      setTimeout(escribirTexto, 100); // velocidad
+      setTimeout(escribirTexto, 100);
     }
   }
   escribirTexto();
+}
 
-/*Lo del checkbox*/ 
-
- const form = document.querySelector('.formulario');
-  const checkbox = document.getElementById('politica');
-  const error = document.getElementById('error-politica');
-
-  // oculto el mensaje al inicio
-  error.style.display = 'none';
-
-  form.addEventListener('submit', function (e) {
-    if (!checkbox.checked) {
-      e.preventDefault(); // ⛔ NO envía el formulario
-      error.style.display = 'flex'; // o 'block'
-    } else {
-      error.style.display = 'none';
-    }
-  }); 
+/* ==========================
+   INICIALIZACIÓN
+========================== */
+initNavbar();
+initBackToTop();
+initServicios();
+initNavLinks();
+initMenuMovil();
+initFormulario();
+initTextoAnimado();
