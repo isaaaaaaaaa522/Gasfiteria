@@ -1,6 +1,3 @@
-/* ==========================
-   NAVBAR
-========================== */
 
 var lastScrollTop = 0;
     navbar = document.querySelector('.navbar');
