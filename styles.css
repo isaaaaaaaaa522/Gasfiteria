@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /*Gooblas CSS*/ 
 *{
     margin: 0;

@@ -1,6 +1,4 @@
-console.log("JS CARGADO CORRECTAMENTE");
 
-document.addEventListener("DOMContentLoaded", () => {
 
   /* ==========================
      NAVBAR OCULTA / MUESTRA
@@ -74,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const titulo = document.getElementById("titulo-servicio");
     const descripcion = document.getElementById("descripcion-servicio");
     const lista = document.getElementById("lista-servicios");
-
+    
     if (!links.length || !titulo || !descripcion || !lista) return;
 
     links.forEach(link => {
@@ -103,10 +101,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     });
-
-    links[0].click();
+    const hashService = window.location.hash.replace("#", "");
+    const initialLink = document.querySelector(
+      `.Menu-servicios nav a[data-service="${hashService}"]`
+    );
+    
+    if (initialLink) {
+      initialLink.click();
+    } else {
+      links[0].click(); // fallback
+    }
   }
+  /* ==========================
+     REDIRECCION DE SERVICIOS
+  ========================== */
+  function initLinksServ(){
+    document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("click", () => {
+    const service = card.dataset.service;
+    window.location.href = `servicios.html#${service}`;
+  });
+});
 
+  }
   /* ==========================
      NAV LINKS ACTIVO
   ========================== */
@@ -201,11 +218,10 @@ document.addEventListener("DOMContentLoaded", () => {
      INICIALIZACIÓN
   ========================== */
   initNavbar();
+  initLinksServ();
   initBackToTop();
   initServicios();
   initNavLinks();
   initMenuMovil();
   initFormulario();
   initTextoAnimado();
-
-});
