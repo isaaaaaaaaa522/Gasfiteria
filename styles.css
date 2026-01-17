@@ -575,7 +575,7 @@ button {
 
 .footer p {
   margin-bottom: 15px;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 /* CONTENEDOR REDES */
@@ -984,25 +984,22 @@ nav a i{
 
 /* HEADER */
 .proceso-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
+
+  margin-bottom: 50px;
 
    
 }
 
 .proceso-header h3 {
-  font-size: 1.5rem;
-  
-  
- 
- 
-  
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+
 }
 
 /* GRID */
 .proceso-grid {
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
@@ -1010,7 +1007,8 @@ nav a i{
 
 /* TARJETAS */
 .paso {
-  background-color: #fff;
+  background-color: var(--bg-card);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   border-radius: 16px;
   padding: 25px 20px;
   text-align: center;
@@ -1022,26 +1020,28 @@ nav a i{
   margin-top: 15px;
   margin-bottom: 10px;
   font-size: 1.1rem;
+  
 }
 
 .paso p {
   font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.2;
+  text-align: justify;
 }
 
 /* ICONOS */
 .icono {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   margin: 0 auto;
-  background-color: #2563eb;
+  background-color: var(--accent);
   color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
     position: absolute;        /* ← sale del flujo */
   top: -25px;                /* ← mitad fuera de la caja */
   left: 50%;
@@ -1327,16 +1327,38 @@ nav a i{
 } */
 
 .divisor{
-
-
   display: flex;
   width: 800px;
   margin: auto;
   transform: translateX(100px);
- 
   align-items: flex-start;
   flex-direction: column;
-
 }
 
+.btn-services{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 
+.btn-services i{
+  font-size: 1.6rem;
+}
+
+.text-btn{
+  display: flex;
+  flex-direction: column;
+}
+
+.upper{
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1.2px;
+   text-align: start;
+}
+
+.small{
+  font-size: 1.1rem;
+   text-align: start;
+}
