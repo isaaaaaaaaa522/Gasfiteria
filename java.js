@@ -163,6 +163,7 @@
     navLinksItems.forEach(link => {
       link.addEventListener("click", () => {
         navsLinks.classList.remove("active");
+        menuToggle.classList.remove("open");
         menuToggle.textContent = "☰";
       });
     });
