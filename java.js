@@ -41,6 +41,7 @@
         descripcion: "Nuestro servicio de gasfitería cubre todas las necesidades residenciales y comerciales.",
         items: [
           { titulo: "Reparación de fugas", detalle: "Detección y reparación rápida de fugas." },
+                    { titulo: "Reparación de fugas", detalle: "Detección y reparación rápida de fugas." },
           { titulo: "Instalaciones", detalle: "Instalación de redes de agua y desagüe." }
         ]
       },
