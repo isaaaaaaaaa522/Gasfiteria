@@ -347,6 +347,12 @@ font-size: 7rem;
   text-decoration: none;
   font-weight: 600;
 }
+
+.card-content a i{
+  margin-left: 6px;
+  font-size: 1.1rem;
+
+}
 @media (max-width: 768px) {
   .cards{
     display: flex;
@@ -966,9 +972,20 @@ nav a i{
   text-align: center;
 }
 .Preguntas span{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   padding: 15px;
   background-color: var(--bg-card);
   border-radius: 15px;
+   display: flex;
+  align-items: center;
+}
+
+.Preguntas span i{
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-bottom: 5px;
 }
 /*------- Atencion ------*/
 .Proceso-atencion {
@@ -1340,6 +1357,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   align-items: center;
   justify-content: center;
   gap: 10px;
+  border-radius: 10px;
 }
 
 .btn-services i{
