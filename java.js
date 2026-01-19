@@ -215,6 +215,24 @@
 
     escribirTexto();
   }
+  function initchatbox(){
+    const launcher = document.getElementById("luna-launcher");
+
+    if (launcher) {
+      launcher.addEventListener("mouseenter", () => {
+        launcher.classList.add("active");
+      });
+
+      launcher.addEventListener("mouseleave", () => {
+      setTimeout(() => {
+          launcher.classList.remove("active");
+        }, 800);
+      });
+      
+    }
+    
+
+  }
 
   /* ==========================
      INICIALIZACIÓN
@@ -227,3 +245,4 @@
   initMenuMovil();
   initFormulario();
   initTextoAnimado();
+  initchatbox();

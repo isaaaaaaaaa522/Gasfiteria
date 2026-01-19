@@ -248,10 +248,10 @@ font-size: 7rem;
 /* Boton para subir arriba*/
 #backToTop { 
   position: fixed;
-  bottom: 100px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
+  bottom: 85px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
   border: none;
   border-radius: 50%;
   background: var(--bg-card);
@@ -1379,4 +1379,60 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 .small{
   font-size: 1.1rem;
    text-align: start;
+}
+/*-----Chat-Box------*/
+#luna-launcher {
+  position: fixed;
+  bottom: 15px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* TEXTO */
+.luna-text {
+  opacity: 0;
+  transform: translateX(12px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+
+  background: var(--bg-card);
+  color: var(--accent);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.35);
+  animation: glow 2s infinite ease-in-out;
+}
+
+/* CUANDO JS ACTIVA EL ESTADO */
+#luna-launcher.active .luna-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ICONO */
+.luna-icon {
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  color: var(--bg-main);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+/* EFECTO */
+@keyframes glow {
+  0% { box-shadow: 0 0 10px rgba(249,115,22,.3); }
+  50% { box-shadow: 0 0 22px rgba(249,115,22,.6); }
+  100% { box-shadow: 0 0 10px rgba(249,115,22,.3); }
 }
