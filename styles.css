@@ -1187,30 +1187,25 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 .midnight-hero {
   background: linear-gradient(120deg, #020617, #0f172a);
   color: #ffffff;
-  padding: 80px 20px;
+  padding:  82px 20px 30px 20px;
   text-align: center;
+   
 
 }
 
 .midnight-hero h1 {
-  font-size: 36px;
+  font-size: 90px;
   font-weight: 700;
-  margin-bottom: 12px;
+ 
 }
 
 .midnight-hero p {
-  font-size: 15px;
-  color: #c7d2fe;
-  max-width: 620px;
+  font-size: 1rem;
+  color: white;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-.midnight-hero small {
-  display: block;
-  margin-top: 10px;
-  font-size: 12px;
-  opacity: 0.7;
-}
 
 /* ===== CONTENEDOR ===== */
 .cloud-container {
@@ -1231,23 +1226,20 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   
 }
 
-/* ===== TEXTO ===== */
-.graphite-text {
-  font-size: 14px;
-  color: #4b5563;
-  margin-bottom: 32px;
-  text-align: justify;
-}
 
 /* ===== SECCIONES ===== */
 .slate-section {
   margin-bottom: 36px;
   display: flex;
-  flex-direction: column;
- 
-  
+  flex-direction: column; 
 }
 
+.slate-section .descrip{
+  font-size: 16px;
+  color: #4b5563;
+  text-align: justify;
+  margin-left: 50px;
+}
 .slate-section h3 {
   display: flex;
   justify-content: flex-start;
@@ -1287,50 +1279,26 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 
 /* ===== NOTA ===== */
 .cloud-note {
-  margin-top: 12px;
-  background: #f1f5f9;
-  padding: 12px;
-  font-size: 13px;
+  margin: 12px 0 0 50px;
+  background: rgba(232, 148, 22, 0.148);
+  padding: 10px 12px;
+  font-size: 14px;
   border-radius: 8px;
-  color: #475569;
+  color: var(--accent);
+
+}
+
+.important i{
+  margin-right: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+ 
 }
 
 /* ===== DERECHOS ARCO ===== */
-.sky-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
-}
 
-.sky-box {
-  background: #f8fafc;
-  border-radius: 10px;
-  padding: 14px;
-  font-size: 13px;
-  color: #374151;
-}
 
-.sky-box strong {
-  display: block;
-  margin-bottom: 4px;
-  color: #111827;
-}
-
-/* ===== SOPORTE ===== */
-/* .azure-support {
-  background: #eef4ff;
-  padding: 20px;
-  border-radius: 14px;
-  margin-top: 32px;
-} */
-
-.azure-support a {
-  color: #2563eb;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-}
 
 /* ===== RESPONSIVE ===== */
 /* @media (max-width: 600px) {
