@@ -1189,14 +1189,42 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   color: #ffffff;
   padding:  82px 20px 30px 20px;
   text-align: center;
-   
+}
 
+.divisor{
+  display: flex;
+  width: 800px;
+  margin: auto;
+  transform: translateX(100px);
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .divisor{
+    width: 100%;
+    transform: translateX(0px);
+    padding: 10px;
+  }
 }
 
 .midnight-hero h1 {
   font-size: 90px;
-  font-weight: 700;
- 
+  font-weight: 700; 
+}
+
+@media (max-width: 560px) {
+  .midnight-hero h1 {
+    font-size: 78px;
+  }
+  
+}
+
+@media (max-width: 450px) {
+  .midnight-hero h1 {
+    font-size: 50px;
+  }
+  
 }
 
 .midnight-hero p {
@@ -1221,11 +1249,14 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 .snow-card {
   background: #ffffff;
   width: 100%;
-  padding: 40px;
-
-  
+  padding: 40px; 
 }
 
+@media (max-width: 900px) {
+  .snow-card {
+    padding: 24px
+}
+}
 
 /* ===== SECCIONES ===== */
 .slate-section {
@@ -1311,14 +1342,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   }
 } */
 
-.divisor{
-  display: flex;
-  width: 800px;
-  margin: auto;
-  transform: translateX(100px);
-  align-items: flex-start;
-  flex-direction: column;
-}
+
 
 .btn-services{
   display: flex;
